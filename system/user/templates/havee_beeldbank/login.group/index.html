@@ -1,44 +1,36 @@
-<h1>Inloggen bij havee</h1>
+<h1>Inloggen bij havee after sync~</h1>
 
-{if logged_out}
+{if logged_out} {exp:member:login_form return="members/dashboard"
+error_handling="inline" }
 
-{exp:member:login_form
-    return="members/dashboard"
-    error_handling="inline"
-}
+<p>
+  <label for="username">Gebruikersnaam of e-mail</label><br />
+  <input type="text" name="username" id="username" required />
+</p>
 
-    <p>
-        <label for="username">Gebruikersnaam of e-mail</label><br>
-        <input type="text" name="username" id="username" required>
-    </p>
+<p>
+  <label for="password">Wachtwoord</label><br />
+  <input type="password" name="password" id="password" required />
+</p>
 
-    <p>
-        <label for="password">Wachtwoord</label><br>
-        <input type="password" name="password" id="password" required>
-    </p>
+<p>
+  <label>
+    <input type="checkbox" name="remember_me" value="1" />
+    Onthoud mij
+  </label>
+</p>
 
-    <p>
-        <label>
-            <input type="checkbox" name="remember_me" value="1">
-            Onthoud mij
-        </label>
-    </p>
-
-    {if errors}
-        <div class="errors">
-            {errors}
-                <p>{error}</p>
-            {/errors}
-        </div>
-    {/if}
-
-    <button type="submit">Inloggen</button>
-
-{/exp:member:login_form}
-
+{if errors}
+<div class="errors">
+  {errors}
+  <p>{error}</p>
+  {/errors}
+</div>
 {/if}
 
-{if logged_in}
-    <p>Je bent al ingelogd.</p>
-    <p><a href="{path='members/logout'}">Uitloggen</a></p>
+<button type="submit">Inloggen</button>
+
+{/exp:member:login_form} {/if} {if logged_in}
+<p>Je bent al ingelogd.</p>
+<p><a href="{path='members/logout'}">Uitloggen</a></p>
 {/if}
