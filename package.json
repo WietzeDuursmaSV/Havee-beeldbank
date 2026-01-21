@@ -1,0 +1,23 @@
+{
+  "name": "havee-beeldbank",
+  "version": "1.0.0",
+  "description": "Havee Beeldbank - ExpressionEngine CMS with Tailwind CSS",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "tailwindcss -i ./themes/user/site/default/asset/style/tailwind.css -o ./themes/user/site/default/asset/style/tailwind-compiled.css --watch",
+    "build-css-prod": "tailwindcss -i ./themes/user/site/default/asset/style/tailwind.css -o ./themes/user/site/default/asset/style/tailwind-compiled.css --minify"
+  },
+  "keywords": [
+    "expressionengine",
+    "tailwindcss",
+    "beeldbank",
+    "cms"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "tailwindcss": "^3.4.0"
+  }
+}

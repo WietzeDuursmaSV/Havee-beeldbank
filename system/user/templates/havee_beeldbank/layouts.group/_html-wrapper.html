@@ -21,22 +21,23 @@
 			<meta property="og:description" content="{layout:og_description}">
 		{/if}
 
-		<link href="{theme_user_folder_url}site/default/asset/style/default.min.css" title="common-styles" rel="stylesheet">
-		<!-- <link href="{theme_user_folder_url}site/default/asset/style/debug.min.css" title="common-styles" rel="stylesheet"> -->
+		<!-- Tailwind CSS -->
+		<script src="https://cdn.tailwindcss.com"></script>
+		
 	</head>
-	<body>
-		<header class="full">
-			<section class="row pad">
-				<section class="w-8">
+	<body class="w-screen">
+		<header class="w-full flex row items-center justify-between p-4 bg-gray-100">
+			
+				<section >
 					<h1><a href="{homepage}"><b>{site_name}</b> Website</a></h1>
 				</section>
-				<section class="w-8">
+				<section >
 					{!-- creates a small menu link on smaller devices --}
 					<a class="small-menu" href="#"></a>
 					{!-- appears in both header and footer, so a snippet is used to keep it DRY --}
 					{snp_main_nav}
 				</section>
-			</section>
+			
 		</header>
 
 		{layout:breadcrumbs}

@@ -1,36 +1,83 @@
-<h1>Inloggen bij havee after sync~</h1>
+{layout='layouts/_contact-layout'}
+<div class="max-w-md mx-auto mt-8 bg-white p-8 rounded-lg shadow-md">
+  <h1 class="text-2xl font-bold text-gray-800 mb-6">
+    Inloggen bij havee beeldbank
+  </h1>
 
-{if logged_out} {exp:member:login_form return="members/dashboard"
-error_handling="inline" }
+  {if logged_out} {exp:member:login_form return="members/dashboard"
+  error_handling="inline" }
 
-<p>
-  <label for="username">Gebruikersnaam of e-mail</label><br />
-  <input type="text" name="username" id="username" required />
-</p>
+  <div class="mb-4">
+    <label for="username" class="block text-sm font-medium text-gray-700 mb-2"
+      >Gebruikersnaam of e-mail</label
+    >
+    <input
+      type="text"
+      name="username"
+      id="username"
+      required
+      class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+    />
+  </div>
 
-<p>
-  <label for="password">Wachtwoord</label><br />
-  <input type="password" name="password" id="password" required />
-</p>
+  <div class="mb-4">
+    <label for="password" class="block text-sm font-medium text-gray-700 mb-2"
+      >Wachtwoord</label
+    >
+    <input
+      type="password"
+      name="password"
+      id="password"
+      required
+      class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+    />
+  </div>
 
-<p>
-  <label>
-    <input type="checkbox" name="remember_me" value="1" />
-    Onthoud mij
-  </label>
-</p>
+  <div class="mb-6">
+    <label class="flex items-center">
+      <input
+        type="checkbox"
+        name="remember_me"
+        value="1"
+        class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+      />
+      <span class="ml-2 text-sm text-gray-600">Onthoud mij</span>
+    </label>
+  </div>
 
-{if errors}
-<div class="errors">
-  {errors}
-  <p>{error}</p>
-  {/errors}
+  {if errors}
+  <div class="bg-red-50 border border-red-200 rounded-md p-4 mb-6">
+    <div class="flex">
+      <div class="ml-3">
+        <h3 class="text-sm font-medium text-red-800">
+          Er zijn fouten opgetreden:
+        </h3>
+        <div class="mt-2 text-sm text-red-700">
+          {errors}
+          <p class="mt-1">{error}</p>
+          {/errors}
+        </div>
+      </div>
+    </div>
+  </div>
+  {/if}
+
+  <button
+    type="submit"
+    class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200"
+  >
+    Inloggen
+  </button>
+
+  {/exp:member:login_form} {/if} {if logged_in}
+  <div class="text-center">
+    <p class="text-green-600 mb-4">Je bent al ingelogd.</p>
+    <a
+      href="{path='members/logout'}"
+      class="inline-block bg-gray-600 text-white py-2 px-4 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition duration-200"
+    >
+      Uitloggen
+    </a>
+  </div>
+  {/if}
 </div>
-{/if}
-
-<button type="submit">Inloggen</button>
-
-{/exp:member:login_form} {/if} {if logged_in}
-<p>Je bent al ingelogd.</p>
-<p><a href="{path='members/logout'}">Uitloggen</a></p>
-{/if}
