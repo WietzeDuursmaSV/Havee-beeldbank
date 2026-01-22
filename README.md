@@ -15,6 +15,7 @@ Hierdoor:
 Dit project gebruikt een lokale Tailwind CSS build in plaats van de CDN versie om `@apply` directives en custom components te ondersteunen.
 
 ### 📁 Bestanden structuur:
+
 - **Input file**: `themes/user/site/default/asset/css/input.css` (source)
 - **Output file**: `themes/user/site/default/asset/css/global.css` (compiled)
 - **Config**: `tailwind.config.js`
@@ -28,10 +29,11 @@ Dit project gebruikt een lokale Tailwind CSS build in plaats van de CDN versie o
    - Gebruik normale CSS voor complexere styling
 
 2. **CSS compileren**:
+
    ```bash
    # Eenmalig compileren (voor productie)
    npm run build-css-prod
-   
+
    # Of watch mode voor development
    npm run build-css
    ```
@@ -40,6 +42,7 @@ Dit project gebruikt een lokale Tailwind CSS build in plaats van de CDN versie o
    - Door de SFTP configuratie wordt `global.css` automatisch geüpload bij wijzigingen
 
 ### 📝 Voorbeeld custom component:
+
 ```css
 /* In input.css */
 .form-input {
@@ -52,6 +55,7 @@ Dit project gebruikt een lokale Tailwind CSS build in plaats van de CDN versie o
 ```
 
 ### ⚠️ Belangrijk:
+
 - **Bewerk nooit** `global.css` direct - dit wordt overschreven bij compilatie
 - **Gebruik altijd** `input.css` als source file
 - **Vergeet niet** `npm run build-css-prod` na wijzigingen
