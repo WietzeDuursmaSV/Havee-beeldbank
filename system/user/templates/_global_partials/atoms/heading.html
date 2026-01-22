@@ -1,0 +1,19 @@
+{!-- Atom: Heading Component --}
+{!-- Usage: {embed="_global_partials/atoms/heading" level="1" text="Page Title" class="text-3xl"} --}
+{if level == "1"}
+    <h1 class="{if class}{class}{if:else}text-3xl font-bold{/if}">
+        {if text}{text}{if:else}{embed:inner_content}{/if}
+    </h1>
+{if:elseif level == "2"}
+    <h2 class="{if class}{class}{if:else}text-2xl font-semibold{/if}">
+        {if text}{text}{if:else}{embed:inner_content}{/if}
+    </h2>
+{if:elseif level == "3"}
+    <h3 class="{if class}{class}{if:else}text-xl font-medium{/if}">
+        {if text}{text}{if:else}{embed:inner_content}{/if}
+    </h3>
+{if:else}
+    <h2 class="{if class}{class}{if:else}text-2xl font-semibold{/if}">
+        {if text}{text}{if:else}{embed:inner_content}{/if}
+    </h2>
+{/if}

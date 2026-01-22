@@ -21,24 +21,12 @@
 			<meta property="og:description" content="{layout:og_description}">
 		{/if}
 
-		<!-- Tailwind CSS -->
-		<script src="https://cdn.tailwindcss.com"></script>
+		<!-- Custom Compiled Tailwind CSS (includes all Tailwind utilities + custom components) -->
+		<link href="{theme_user_folder_url}site/default/asset/css/global.css" rel="stylesheet">
 		
 	</head>
-	<body class="w-screen">
-		<header class="w-full flex row items-center justify-between p-4 bg-gray-100">
-			
-				<section>
-					<h1><a href="{homepage}"><b>{site_name}</b> Website</a></h1>
-				</section>
-				<section>
-					{!-- creates a small menu link on smaller devices --}
-					<a class="small-menu" href="#"></a>
-					{!-- appears in both header and footer, so a snippet is used to keep it DRY --}
-					{snp_main_nav}
-				</section>
-			
-		</header>
+	<body class="w-screen bg-[#f3efef] flex flex-col items-center">
+		{snp_atomic_header}
 
 		{layout:breadcrumbs}
 
@@ -46,17 +34,9 @@
 			{layout:contents}
 		</div>
 
-		<footer class="full">
-			<section class="footer-content">
-				{!-- appears in both header and footer, so a snippet is used to keep it DRY --}
-				{snp_main_nav}
-				<p>&copy;{current_time format='%Y'}, all rights reserved. Built with <a href="https://expressionengine.com/" rel="external">ExpressionEngine&reg;</a></p>
-			</section>
-		</footer>
-		</section>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
-		<script src="{theme_user_folder_url}site/default/asset/js/default.min.js" ></script>
-		<script src="{theme_user_folder_url}site/default/asset/js/plugins/cycle2.min.js"></script>
+		{snp_atomic_footer}
+
+
 		{layout:scripts}
 	</body>
 </html>

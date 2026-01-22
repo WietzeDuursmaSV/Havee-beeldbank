@@ -1,0 +1,20 @@
+{!-- Organism: Site Header --}
+{!-- Usage: {embed="_global_partials/organisms/header"} --}
+<header class="w-full flex row items-center justify-between p-4 bg-[#f3efef] shadow-md mb-4">
+    <section>
+        {embed="_global_partials/atoms/heading" 
+            level="1" 
+            class="text-2xl font-bold"
+        }
+            {embed="_global_partials/atoms/link" 
+                href="{homepage}" 
+                text="{site_name}"
+                class="text-gray-900 hover:text-blue-600 no-underline"
+            }
+        {/embed}
+    </section>
+    
+    <section>
+        {embed="_global_partials/organisms/main-nav"}
+    </section>
+</header>

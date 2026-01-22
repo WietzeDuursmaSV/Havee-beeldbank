@@ -1,0 +1,9 @@
+{!-- Molecule: Navigation Item --}
+{!-- Usage: {embed="_global_partials/molecules/nav-item" path="about" segment="about" text="About"} --}
+<li>
+    {embed="_global_partials/atoms/link" 
+        href="{if path}{path='path'}{if:else}#{/if}"
+        class="{if segment_1 == segment}act text-blue-600 font-semibold{if:else}text-gray-700 hover:text-blue-600{/if}"
+        text="{text}"
+    }
+</li>

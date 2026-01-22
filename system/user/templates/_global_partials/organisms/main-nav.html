@@ -1,0 +1,26 @@
+{!-- Organism: Main Navigation --}
+{!-- Usage: {embed="_global_partials/organisms/main-nav"} --}
+<nav role="navigation" aria-label="Main navigation">
+    <ul class="main-nav flex space-x-6">
+        {embed="_global_partials/molecules/nav-item" 
+            path="" 
+            segment="" 
+            text="Home"
+        }
+        {embed="_global_partials/molecules/nav-item" 
+            path="about" 
+            segment="about" 
+            text="About"
+        }
+        {embed="_global_partials/molecules/nav-item" 
+            path="blog" 
+            segment="blog" 
+            text="Blog"
+        }
+        {embed="_global_partials/molecules/nav-item" 
+            path="contact" 
+            segment="contact" 
+            text="Contact"
+        }
+    </ul>
+</nav>

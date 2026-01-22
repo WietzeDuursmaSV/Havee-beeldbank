@@ -1,0 +1,69 @@
+{!-- Organism: Site Footer --}
+{!-- Usage: {embed="_global_partials/organisms/footer"} --}
+<footer class="w-full bg-gray-800 text-white py-8 mt-16">
+    <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Site Info -->
+            <div class="footer-section">
+                {embed="_global_partials/atoms/heading" 
+                    level="3" 
+                    text="{site_name}"
+                    class="text-white text-lg font-semibold mb-4"
+                }
+                <p class="text-gray-400">
+                    {if layout:footer_description}{layout:footer_description}{if:else}Uw beeldbank voor professionele foto's en media.{/if}
+                </p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="footer-section">
+                {embed="_global_partials/atoms/heading" 
+                    level="3" 
+                    text="Quick Links"
+                    class="text-white text-lg font-semibold mb-4"
+                }
+                <ul class="space-y-2">
+                    <li>
+                        {embed="_global_partials/atoms/link" 
+                            href="{homepage}"
+                            text="Home"
+                            class="text-gray-400 hover:text-white transition-colors"
+                        }
+                    </li>
+                    <li>
+                        {embed="_global_partials/atoms/link" 
+                            href="{path='about'}"
+                            text="About"
+                            class="text-gray-400 hover:text-white transition-colors"
+                        }
+                    </li>
+                    <li>
+                        {embed="_global_partials/atoms/link" 
+                            href="{path='contact'}"
+                            text="Contact"
+                            class="text-gray-400 hover:text-white transition-colors"
+                        }
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="footer-section">
+                {embed="_global_partials/atoms/heading" 
+                    level="3" 
+                    text="Contact Info"
+                    class="text-white text-lg font-semibold mb-4"
+                }
+                <p class="text-gray-400">
+                    {if layout:contact_info}{layout:contact_info}{/if}
+                </p>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+            <p class="text-gray-400">
+                © {current_time format="%Y"} {site_name}. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>

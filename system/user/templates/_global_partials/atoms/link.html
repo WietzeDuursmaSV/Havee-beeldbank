@@ -1,0 +1,10 @@
+{!-- Atom: Link Component --}
+{!-- Usage: {embed="_global_partials/atoms/link" href="/" text="Home" class="active"} --}
+<a 
+    href="{if href}{href}{if:else}#{/if}"
+    {if class}class="{class}"{/if}
+    {if target}target="{target}"{/if}
+    {if title}title="{title}"{/if}
+>
+    {if text}{text}{if:else}{embed:inner_content}{/if}
+</a>

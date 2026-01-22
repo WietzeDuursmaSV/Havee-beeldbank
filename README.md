@@ -10,6 +10,55 @@ Hierdoor:
 
 ---
 
+## Tailwind CSS Development Workflow
+
+Dit project gebruikt een lokale Tailwind CSS build in plaats van de CDN versie om `@apply` directives en custom components te ondersteunen.
+
+### 📁 Bestanden structuur:
+- **Input file**: `themes/user/site/default/asset/css/input.css` (source)
+- **Output file**: `themes/user/site/default/asset/css/global.css` (compiled)
+- **Config**: `tailwind.config.js`
+- **Package**: `package.json` (scripts)
+
+### 🔄 Workflow voor CSS wijzigingen:
+
+1. **Wijzigingen maken**:
+   - Bewerk `themes/user/site/default/asset/css/input.css`
+   - Voeg custom classes toe met `@apply` directives
+   - Gebruik normale CSS voor complexere styling
+
+2. **CSS compileren**:
+   ```bash
+   # Eenmalig compileren (voor productie)
+   npm run build-css-prod
+   
+   # Of watch mode voor development
+   npm run build-css
+   ```
+
+3. **Automatisch uploaden**:
+   - Door de SFTP configuratie wordt `global.css` automatisch geüpload bij wijzigingen
+
+### 📝 Voorbeeld custom component:
+```css
+/* In input.css */
+.form-input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+}
+
+.btn-primary {
+  @apply w-full bg-slate-400 text-white py-2 px-4 rounded-md hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200;
+}
+```
+
+### ⚠️ Belangrijk:
+- **Bewerk nooit** `global.css` direct - dit wordt overschreven bij compilatie
+- **Gebruik altijd** `input.css` als source file
+- **Vergeet niet** `npm run build-css-prod` na wijzigingen
+- De HTML templates gebruiken **geen CDN** meer - alles komt uit de lokale `global.css`
+
+---
+
 ## Vereisten
 
 - VS Code

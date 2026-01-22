@@ -4,8 +4,8 @@
   "description": "Havee Beeldbank - ExpressionEngine CMS with Tailwind CSS",
   "main": "index.js",
   "scripts": {
-    "build-css": "tailwindcss -i ./themes/user/site/default/asset/style/tailwind.css -o ./themes/user/site/default/asset/style/tailwind-compiled.css --watch",
-    "build-css-prod": "tailwindcss -i ./themes/user/site/default/asset/style/tailwind.css -o ./themes/user/site/default/asset/style/tailwind-compiled.css --minify"
+    "build-css": "tailwindcss -i ./themes/user/site/default/asset/css/input.css -o ./themes/user/site/default/asset/css/global.css --watch",
+    "build-css-prod": "tailwindcss -i ./themes/user/site/default/asset/css/input.css -o ./themes/user/site/default/asset/css/global.css --minify"
   },
   "keywords": [
     "expressionengine",

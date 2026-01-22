@@ -1,0 +1,13 @@
+{!-- Atom: Input Field --}
+{!-- Usage: {embed="_global_partials/atoms/input" type="text" name="email" placeholder="Enter email"} --}
+<input 
+    type="{if type}{type}{if:else}text{/if}"
+    {if name}name="{name}"{/if}
+    {if id}id="{id}"{/if}
+    {if value}value="{value}"{/if}
+    {if placeholder}placeholder="{placeholder}"{/if}
+    {if required}required{/if}
+    {if readonly}readonly{/if}
+    {if disabled}disabled{/if}
+    class="{if class}{class}{if:else}w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500{/if}"
+/>
