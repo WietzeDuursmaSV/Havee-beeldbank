@@ -1,0 +1,6 @@
+# ExpressionEngine template bestanden uitsluiten van Prettier formattering
+system/user/templates/**/*.html
+themes/user/**/*.html
+
+# Ook andere template extensies uitsluiten
+system/user/templates/**/*.group
