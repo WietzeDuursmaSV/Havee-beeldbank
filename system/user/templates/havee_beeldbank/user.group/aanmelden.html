@@ -1,0 +1,44 @@
+{layout='layouts/_default-layout'}
+
+<div class="max-w-md mx-auto mt-8 bg-white p-8 rounded-lg shadow-md">
+  <h1 class="text-2xl font-bold text-gray-800 mb-6">
+    Aanmelden beeldbank
+  </h1>
+
+{exp:member:registration_form return="member/registration/success"}
+    <div class="grid gap-6">
+        <fieldset >
+            
+            <label for="username" class="form-label">Username*:</label>
+            <input type="text" name="username" id="username" class="form-input" value="{if username}{username}{/if}"/>
+
+            <label for="email" class="form-label">Email*:</label>
+            <input type="text" name="email" id="email" class="form-input" value="{if email}{email}{/if}"/>
+
+            <label for="password" class="form-label">Password*:</label>
+            <input type="password" name="password" id="password" class="form-input" value="{if password}{password}{/if}"/>
+    
+            <label for="password_confirm" class="form-label">Confirm password*:</label>
+            <input type="password" name="password_confirm" id="password_confirm" class="form-input" value="{if password_confirm}{password_confirm}{/if}"/>
+    
+            <label for="terms_of_service" class="form-label">Terms of service:</label>
+            <label><input type="checkbox" name="accept_terms" class="form-checkbox" value="y" {if accept_terms == 'y'}checked="checked"{/if} /> I accept these terms</label>
+            
+            {if captcha}
+            <p>
+                <label for="captcha">{lang:captcha}*</label>
+                {captcha}
+                <input type="text" id="captcha" name="captcha" value="" size="20" maxlength="20" style="width:140px;"/>
+            </p>
+            {/if}
+        </fieldset>
+        <button 
+        type="submit"
+        class="btn-primary"
+        >
+        Registreren
+        </button>
+    </div>    
+{/exp:member:registration_form}
+
+</div

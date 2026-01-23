@@ -1,4 +1,4 @@
-{layout='layouts/_login-layout'}
+{layout='layouts/_default-layout'}
 <div class="max-w-md mx-auto mt-8 bg-white p-8 rounded-lg shadow-md">
   <h1 class="text-2xl font-bold text-gray-800 mb-6">
     HAVEE MEUBELEN beeldbank
@@ -74,12 +74,9 @@
   {/exp:member:login_form} {/if} {if logged_in}
   <div class="text-center">
     <p class="text-green-600 mb-4">Je bent al ingelogd.</p>
-    <a
-      href="{path='members/logout'}"
-      class="inline-block bg-gray-600 text-white py-2 px-4 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition duration-200"
-    >
-      Uitloggen
-    </a>
+    {exp:member:logout_form return="user/login"}
+    <input type="submit" value="Logout">
+    {/exp:member:logout_form}
   </div>
   {/if}
 </div>

@@ -1,0 +1,182 @@
+{layout='layouts/_default-layout'}
+
+{if !logged_in}
+ <a href="{login/}" class="page-link"
+      >Inloggen op de beeldbank</a>
+{if:else}
+<h1 class="mb-4">HAVEE MEUBELEN beeldbank</h1>
+    
+<div class="card-grid">
+
+    {exp:member:roles}
+        {snp_beeldbank_cloak}
+        {snp_beeldbank_lookline}
+        {snp_beeldbank_moduss}
+    {/exp:member:roles}
+</div>
+    
+{/if}
+
+<!-- Slide-in Panel -->
+<div id="slide-panel" class="slide-panel">
+    <div class="slide-panel-overlay" onclick="closeSlidePanel()"></div>
+    <div class="slide-panel-content">
+        <button class="slide-panel-close" onclick="closeSlidePanel()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        
+        <div class="slide-panel-body">
+            <div class="model-image">
+                <img id="panel-image" src="" alt="" class="w-full object-cover rounded-lg">
+            </div>
+            
+            <div class="model-info mt-6">
+                <h2 id="panel-title" class="text-2xl font-bold mb-4"></h2>
+                <div id="panel-content" class="model-description"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CSS Styles -->
+<style>
+.slide-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 0.3s, opacity 0.3s ease-in-out;
+}
+
+.slide-panel.active {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+.slide-panel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.slide-panel-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: white;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+}
+
+.slide-panel.active .slide-panel-content {
+    transform: translateX(0);
+}
+
+.slide-panel-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    z-index: 10;
+}
+
+.slide-panel-close:hover {
+    background-color: #f3f4f6;
+}
+
+.slide-panel-body {
+    padding: 60px 30px 30px;
+}
+
+.model-image img {
+    max-height: 400px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.model-info h2 {
+    color: #1f2937;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 10px;
+}
+
+.model-description {
+    line-height: 1.6;
+    color: #4b5563;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .slide-panel-content {
+        width: 85%;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide-panel-content {
+        width: 100%;
+    }
+    
+    .slide-panel-body {
+        padding: 60px 20px 20px;
+    }
+}
+</style>
+
+<!-- JavaScript -->
+<script>
+function openSlidePanel(title, content, imageUrl) {
+    const panel = document.getElementById('slide-panel');
+    const panelTitle = document.getElementById('panel-title');
+    const panelContent = document.getElementById('panel-content');
+    const panelImage = document.getElementById('panel-image');
+    
+    // Set content
+    panelTitle.textContent = title || 'Model Details';
+    panelContent.innerHTML = content || '';
+    
+    // Set image
+    if (imageUrl) {
+        panelImage.src = imageUrl;
+        panelImage.alt = title || 'Model Image';
+    }
+    
+    // Show panel
+    panel.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+}
+
+function closeSlidePanel() {
+    const panel = document.getElementById('slide-panel');
+    panel.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+}
+
+// Close on escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeSlidePanel();
+    }
+});
+</script>

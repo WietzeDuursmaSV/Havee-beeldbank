@@ -1,6 +1,7 @@
 {!-- Molecule: Content Card --}
 {!-- Usage: {embed="_global_partials/molecules/card" title="Blog Post" date="2024-01-15"} content here {/embed} --}
-<article class="card bg-white rounded-lg shadow-md overflow-hidden {if class}{class}{/if}">
+<article class="card bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow duration-200 {if class}{class}{/if}"
+         onclick="openSlidePanel('{title}', `{embed:inner_content}`, '{if image}{image}{/if}')">
     {if image}
         <div class="card-image">
             <img src="{image}" alt="{if image_alt}{image_alt}{if:else}{title}{/if}" class="w-full h-48 object-cover">

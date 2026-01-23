@@ -1,0 +1,6 @@
+{if role_id == "12"}
+    {exp:channel:entries channel="beeldbank" category="9" limit="200"}
+        <h2>{title}</h2>
+        {body}
+    {/exp:channel:entries}
+{/if}
