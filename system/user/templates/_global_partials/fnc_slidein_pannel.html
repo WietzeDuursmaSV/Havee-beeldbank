@@ -1,0 +1,27 @@
+
+<!-- Slide-in Panel -->
+<div id="slide-panel" class="slide-panel">
+    <div class="slide-panel-overlay" onclick="closeSlidePanel()"></div>
+    <div class="slide-panel-content">
+        <button class="slide-panel-close" onclick="closeSlidePanel()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        
+        <div class="slide-panel-body">
+            <div class="model-image">
+                <img id="panel-image" src="" alt="" class="w-full object-cover rounded-lg">
+            </div>
+            
+            <div class="model-info mt-6">
+                <h2 id="panel-title" class="text-2xl font-bold mb-4"></h2>
+                <div id="panel-content" class="model-description"></div>
+                
+                <!-- Downloads section -->
+                <div id="panel-downloads" class="downloads-section mt-6"></div>
+            </div>
+        </div>
+    </div>
+</div>

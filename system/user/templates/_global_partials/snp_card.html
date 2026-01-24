@@ -1,0 +1,22 @@
+{!-- Molecule: Content Card --}
+{!-- Usage: {embed="_global_partials/com_card" title="Model Name" image="image_url"} content here {/embed} --}
+<article class="card cursor-pointer hover:shadow-lg transition-shadow duration-200"
+         data-title="{model}"
+         data-content="{embed:inner_content}"
+         data-image="{if image}{image}{/if}"
+         data-downloads="[{if image_url}{image_url}{&quot;url&quot;:&quot;{image_url:url}&quot;,&quot;bestand&quot;:&quot;{image_url:bestand}&quot;,&quot;naam&quot;:&quot;{image_url:naam}&quot;}{if image_url:count != image_url:total_rows},{/if}{/image_url}{/if}]"
+         onclick="openSlidePanelFromData(this);">
+  
+    <div class="card-image">  
+        {if image}
+            <img src="{image}" alt="{if image_alt}{image_alt}{if:else}{title}{/if}" class="card-image">
+        {/if}
+    </div>
+    <div class="card-content">
+        {if title}
+        <div class="text-lg">{model}</div>
+        <div class="text-xs">{categories}{category_name}{/categories}</div>
+        {/if}
+    </div>
+
+</article>
