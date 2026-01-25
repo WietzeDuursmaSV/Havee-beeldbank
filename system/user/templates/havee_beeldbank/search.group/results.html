@@ -7,21 +7,20 @@
 
 			{exp:search:simple_form channel="beeldbank" search_in="everywhere" result_page="search/results" }
 			<div class="form-inline mt-2 mt-md-0">
-				<input class="form-input" type="text" name="keywords" id="keywords" value="" size="18" maxlength="100" placeholder="Modellen zoeken">
+				<input class="form-control mr-sm-2" type="text" name="keywords" id="keywords" value="" size="18" maxlength="100" placeholder="Modellen zoeken">
 				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Zoek</button>
 			</div>
 			{/exp:search:simple_form}
     
 <div class="card-grid">
-
-    {exp:member:roles}
-        {snp_beeldbank_cloak}
-        {snp_beeldbank_lookline}
-        {snp_beeldbank_moduss}
-    {/exp:member:roles}
+	{if no_results}
+		<p>Geen resultaten gevonden voor "{exp:search:keywords}"</p>
+	{if:else}
+		{if results}<h2>Zoekresultaten voor "{exp:search:keywords}"</h2>{/if}
+	{/if}
+	{exp:search:search_results}		
+		{snp_card}
+	{/exp:search:search_results}
 </div>
-    
-{fnc_slidein_pannel}
 
 {/if}
-
