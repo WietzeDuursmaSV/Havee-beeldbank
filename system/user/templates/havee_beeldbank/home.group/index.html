@@ -5,12 +5,7 @@
 {if:else}
 <h1 class="mb-4">HAVEE MEUBELEN beeldbank</h1>
 
-			{exp:search:simple_form channel="beeldbank" search_in="everywhere" result_page="search/results" }
-			<div class="form-inline mt-2 mt-md-0">
-				<input class="form-input" type="text" name="keywords" id="keywords" value="" size="18" maxlength="100" placeholder="Modellen zoeken">
-				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Zoek</button>
-			</div>
-			{/exp:search:simple_form}
+        {fnc_search}
     
 <div class="card-grid">
 
