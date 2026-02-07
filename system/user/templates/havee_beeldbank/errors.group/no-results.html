@@ -1,0 +1,38 @@
+{layout='layouts/_default-layout'}
+
+{if !logged_in}
+ {fnc_login}
+{if:else}
+{snp_header}
+
+<div class="no-results-page text-center py-5">
+	<div class="mb-4">
+		<svg class="w-24 h-24 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+		</svg>
+	</div>
+	<h1 class="text-3xl font-bold text-gray-800 mb-4">Geen resultaten gevonden</h1>
+	<p class="text-gray-600 mb-2">
+		Helaas, er zijn geen resultaten gevonden voor uw zoekopdracht.
+	</p>
+	<p class="text-sm text-gray-500 mb-6">
+		Probeer andere zoektermen of selecteer een andere categorie.
+	</p>
+	
+	<!-- Search form om opnieuw te zoeken -->
+	<div class="max-w-md mx-auto mb-6">
+		<form method="get" action="/search/results">
+			<div class="form-inline">
+				<input class="form-control mr-2" type="text" name="keywords" placeholder="Probeer andere zoektermen">
+				<button class="btn btn-primary" type="submit">Zoek opnieuw</button>
+			</div>
+		</form>
+	</div>
+	
+	<div class="mt-6 space-x-4">
+		<a href="/" class="btn btn-primary">Terug naar homepage</a>
+		<a href="javascript:history.back()" class="btn btn-secondary">Ga terug</a>
+	</div>
+</div>
+
+{/if}

@@ -3,9 +3,7 @@
 {if !logged_in}
  {fnc_login}
 {if:else}
-<h1 class="mb-4">HAVEE MEUBELEN beeldbank</h1>
-
-	{fnc_search}
+{snp_header}
     
 <div class="card-grid">
 	{if no_results}
@@ -17,5 +15,7 @@
 		{snp_card}
 	{/exp:search:search_results}
 </div>
+
+{fnc_slidein_pannel}
 
 {/if}

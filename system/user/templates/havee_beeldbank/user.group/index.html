@@ -72,10 +72,11 @@
   </button>
 
   {/exp:member:login_form} {/if} {if logged_in}
-  <div class="text-center">
+  <div class="text-center page-link-container">
     <p class="text-green-600 mb-4">Je bent al ingelogd.</p>
-    {exp:member:logout_form return="user/login"}
-    <input type="submit" value="Logout">
+    <a href="/" class="btn-secondary mb-4">Ga naar de homepagina</a>
+    {exp:member:logout_form return="/"}
+    <input class="btn-primary"  type="submit" value="Logout">
     {/exp:member:logout_form}
   </div>
   {/if}

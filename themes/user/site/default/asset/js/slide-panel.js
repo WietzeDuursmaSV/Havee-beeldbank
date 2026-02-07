@@ -33,7 +33,7 @@ function openSlidePanel(title, content, imageUrl, imageUrlData) {
     // Create download links section
     const downloadsTitle = document.createElement("h3");
     downloadsTitle.className = "text-lg font-semibold mb-3";
-    downloadsTitle.textContent = "Downloads";
+    downloadsTitle.textContent = "Download als:";
     panelDownloads.appendChild(downloadsTitle);
 
     const downloadsList = document.createElement("div");
@@ -49,7 +49,7 @@ function openSlidePanel(title, content, imageUrl, imageUrlData) {
 
         // Create content based on file type
         if (item.bestand !== "PDF") {
-          downloadLink.innerHTML = `<div class="text-center">${item.bestand}</div>`;
+          downloadLink.innerHTML = `<div class="text-center">${item.bestand} - formaat</div>`;
         } else {
           downloadLink.innerHTML = `<div>${item.bestand}</div> ${item.naam || "Download"}`;
           downloadLink.style.width = "250px";

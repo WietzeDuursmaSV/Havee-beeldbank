@@ -1,0 +1,22 @@
+{layout='layouts/_default-layout'}
+
+{if !logged_in}
+ {fnc_login}
+{if:else}
+{snp_header}
+
+<div class="error-page text-center py-5">
+	<div class="mb-4">
+		<svg class="w-24 h-24 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.082 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+		</svg>
+	</div>
+	<h1 class="text-3xl font-bold text-gray-800 mb-4">Pagina niet gevonden</h1>
+	<p class="text-gray-600 mb-6">De pagina die je zoekt bestaat niet of is verplaatst.</p>
+	<div class="space-x-4">
+		<a href="/" class="btn btn-primary">Terug naar homepage</a>
+		<a href="javascript:history.back()" class="btn btn-secondary">Ga terug</a>
+	</div>
+</div>
+
+{/if}
